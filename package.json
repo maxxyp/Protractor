@@ -1,0 +1,20 @@
+{
+  "name": "maxwell-protractor-one",
+  "version": "1.0.0",
+  "description": "end to end test",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/protractor config.js",
+    "start": "./node_modules/protractor/bin/protractor config.js",
+    "local": "",
+    "cloud": ""
+  },
+  "author": "Maxwell",
+  "license": "ISC",
+  "dependencies": {
+    "protractor": "^5.4.0"
+  },
+  "devDependencies": {
+    "faker": "^4.1.0"
+  }
+}

@@ -1,0 +1,88 @@
+End-to-End Testing with Protractor JS course files
+==========
+
+[Protractor](http://angular.github.io/protractor) is an end-to-end test framework for [AngularJS](http://angularjs.org/) applications. Protractor is a [Node.js](http://nodejs.org/) program built on top of [WebDriverJS](https://github.com/SeleniumHQ/selenium/wiki/WebDriverJs). Protractor runs tests against your application running in a real browser, interacting with it as a user would.
+
+
+https://www.npmjs.com/ ==> npm packages
+
+
+Please note Jasmine framework, its resolve promises internally, when we use expect statement.
+But cucumberjs does not have the capability, so we have to rely on the this libarary chai-as-promise,
+inother to resolve our promises.
+
+npm install chai --save
+npm install chai-as-promised
+
+
+When you are executing a website that is asynchronous, you need to add a callback function
+
+Faker Library
+https://github.com/marak/Faker.js/
+npm install --save-dev faker
+
+
+Setup
+-----
+Install [Java from here](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+Install [Node.js](http://nodejs.org/)
+
+Set Up
+Install Java 1.8
+Download nodejs
+Protractor is a node package manager, so to install it, you do => npm install -g protractor
+
+Clone repo:
+```
+git clone https://gitlab.com/centner/udemy-protractor.git
+```
+
+You can use npm to install Protractor globally with:
+```
+npm install -g protractor
+```
+
+...or after cloning inside project folder execute: (that will install all dependencies from package.json)
+```
+npm i
+```
+
+The webdriver-manager is a helper tool to easily get an instance of a Selenium Server running. Use it to download the necessary binaries with:
+```
+webdriver-manager update ==> This will update the browsers to the latest.
+webdriver-manager start
+
+webdriver-manager update --versions.chrome 2.40 ==> This will update all the browsers. Browsers executable (chromedriver, geckodriver all we be downloaded)
+webdriver-manager start --versions.chrome 2.40
+```
+Running Tests
+-------------
+Tests need to be run from the project directory inside the udemy-protractor:
+```
+cd project-path
+```
+Run Selenium in one tab via:
+```
+webdriver-manager start
+```
+
+Once the Selenium server is running, run this command in another tab:
+```
+npm start OR protractor config.js
+```
+
+
+To Run a particular test
+```
+protractor config.js --suite login
+```
+
+
+It is possible to run tests by test suites/groups separately:
+
+```
+protractor config.js --suite home
+protractor config.js --suite cart
+```
+
+© 2016 Berlin Alexander Grischuk ALL RIGHTS RESERVED
